@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sabziArray=["adrak ", "piyaz", "bhindi"];
+        sessionStorage.setItem("Name", "Sarib");
+        sessionStorage.setItem("Name2", "ghouri");
+        // let name= localStorage.getItem('Name2',"name");
+        // let name2= localStorage.getItem('Name',"name2");
+        sessionStorage.setItem("sabzi", JSON.stringify(sabziArray));
+        // localStorage.clear()
+
+        sessionStorage.removeItem("Name2");
+        // localStorage.removeItem("sabzi",sabziArray[1]);
+        let name = sessionStorage.getItem('Name');
+        name = JSON.parse(sessionStorage.getItem("sabzi"));
+        console.log(name);
+    </script>
+</body>
+</html>
