@@ -28,5 +28,6 @@ let contects = localStorage.getItem("contects")
   textform.value="";
   PhoneNumber.value="";
   idGenerator++;
+  location.href ="/list.html"
 }
 

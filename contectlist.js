@@ -13,23 +13,25 @@ html += "</tr>";
 for (var i = 0; i < users.length; i++) {
   html += "<tr>";
   (html += "<td>" + [i]), "</td>";
-  html += "<td>" + users[i].firstName + "</td>";
-  html += "<td>" + users[i].LastName + "</td>";
-  html += "<td>" + users[i].PhoneNumber + "</td>";
-  html += "<td>" + users[i].emailValue + "</td>";
-  html += "<td>" + users[i].address + "</td>";
-
-  html += "<td><button>Edit</button>  <button>delete</button.setAttribute('onclick', 'deletetr(this)')></td>";
-
+  html += "<td>" + users[i].firstName +"</td>";
+  html += "<td>" + users[i].LastName +"</td>";
+  html += "<td>" + users[i].PhoneNumber+"</td>";
+  html += "<td>" + users[i].emailValue +"</td>";
+  html += "<td>" + users[i].address +"</td>";
+  // html += "<td><button>Edit</button><button>delete</button.setAttribute('onclick', 'deletetr(this)')></td>";
+  let button = document.createElement("td");
+  
   html += "</tr>";
-
+let adit =document.createElement("button");
+let del =document.createElement("button"); 
   let table = document.createElement("table");
   let thead = document.createElement("thead");
   let tbody = document.createElement("tbody");
 
   thead.appendChild(table);
   table.appendChild(tbody);
-
+adit.appendChild(button);
+del.appendChild(button)
   let row1 = document.createElement("tr");
   let heading1 = document.createElement("th");
   let heading2 = document.createElement("th");
@@ -48,16 +50,16 @@ html += "</table>";
 document.getElementById("form").innerHTML = html;
 
 function deletetr(e) {
-  e.parentElement.remove()
-  console.log(e)
-
-  for (var index = 0; index < data.length; index++) {
-    data.splice(index, 1);
-  }
-
-
-
-}
+  //     e.parentElement.parentElement.remove()
+  //     console.log(e)
+  //     const data = JSON.parse(localStorage.getItem('contects'))
+  //     for (var index = 0; index < data.length; index++) {
+  //       users.splice(index, 1);
+  //     }
+  //     localStorage.setItem('contects', JSON.stringify(users))
+    
+  
+  // }
 
 
 

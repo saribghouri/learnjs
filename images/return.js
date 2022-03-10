@@ -64,11 +64,6 @@ let value = map(list =>{
   td4.append(th4);
   td5.append(th5);
 
-//  th1.append(td1)
-//  th2.append(td2)
-//  th3.append(td3)
-//  th4.append(td4)
-//  th5.append(td5)
 
 }
 function deletetr(e) {
@@ -81,7 +76,6 @@ function deletetr(e) {
     localStorage.setItem('contects', JSON.stringify(data))
   
   console.log(contectli)
-
 }
   function adittr(e){
     var value = e.previousSibling.previousSibling;
