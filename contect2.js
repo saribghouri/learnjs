@@ -22,12 +22,21 @@ let contects = localStorage.getItem("contects")
   contects.push(ContectDetails);
   console.log("contects", contects)
   localStorage.setItem("contects", JSON.stringify(contects));
-  // fname.value = "";
+  fname.value = "";
   lname.value = "";
   emailValue.value = "";
   textform.value="";
   PhoneNumber.value="";
   idGenerator++;
-  location.href ="/list.html"
+  location.href ="/contects2.html"
+  update(index)
+  function update(index){
+      index.preventDefault(index)
+    const formdata =  localStorage.getItem("data");
+   
+    localStorage.setItem("data", JSON.stringify(formdata));
+    formdata.location.href ="/contects2.html"
+  }
 }
+
 

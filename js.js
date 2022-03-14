@@ -41,20 +41,25 @@ users.forEach((item, index) => {
 
   let btn = document.createElement("button");
   btn.innerHTML = "adit";
+  btn.onclick= function(){
+ aditVlaue(index,item)
+//  addEventListener(index,item)
+  }
   let btn1 = document.createElement("button");
   btn1.innerHTML = "delete";
   btn1.onclick = function () {
-    // deleteContect(index);
+    deleteContect(index);
+    EventTarget()
   };
 
   td7.appendChild(btn);
   td7.appendChild(btn1);
   (td1.innerText = index),
-    (td2.innerText = item.firstName),
-    (td3.innerText = item.LastName),
-    (td4.innerText = item.emailValue),
-    (td5.innerText = item.PhoneNumber),
-    (td6.innerText = item.address),
+    td2.innerText = item.firstName,
+    td3.innerText = item.LastName,
+    td4.innerText = item.emailValue,
+    td5.innerText = item.PhoneNumber,
+    td6.innerText = item.address,
   trow.appendChild(td1);
   trow.appendChild(td2);
   trow.appendChild(td3);
@@ -64,12 +69,27 @@ users.forEach((item, index) => {
   trow.appendChild(td7);
   tb.appendChild(trow);
   
-  deleteContect(index);
-});
-function deleteContect(index) {
-  const data = JSON.parse(localStorage.getItem("contects"));
-  data.splice(index, 1);
-  localStorage.setItem("contects", JSON.stringify(data))
-  location.reload()
-  console.log(index);
-}
+  function deleteContect(index) {
+    location.reload()
+    const data = JSON.parse(localStorage.getItem("contects"));
+    data.splice(index, 1);
+    localStorage.setItem("contects", JSON.stringify(data))
+    console.log(index);
+  }
+  
+  function aditVlaue(index,item){
+  seletedRow =item.parentElement;
+  document.getElementById("fname").value=seletedRow.td2[index].innerHTML;
+  document.getElementById("lname").value=seletedRow.td3[1].innerHTML;
+  document.getElementById("emailValue").value=seletedRow.td4[2].innerHTML;
+  document.getElementById("PhoneNumber").value=seletedRow.td5[3].innerHTML;
+  document.getElementById("EnterText").value=seletedRow.td6[4].innerHTML;
+  // const data = JSON.parse(localStorage.getItem("contects"));
+  
+  console.log(index,item)
+  
+  
+  };
+
+  // deleteContect(index);
+});  
