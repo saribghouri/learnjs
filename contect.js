@@ -29,5 +29,13 @@ let contects = localStorage.getItem("contects")
   PhoneNumber.value="";
   idGenerator++;
   location.href ="/list.html"
+  
 }
-
+function myFunction() {o
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "tpnav";
+  }
+}

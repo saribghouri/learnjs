@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="assets/js/jquery-3.3.1.js"></script>
+<form class="form-horizontal" role="form" action="" enctype="multipart/formdata" method="POST" autocomplete="off">
+
+
+<table id="table" class=" table order-list">
+<thead>
+<tr>
+<td><b>Type</b></td>
+</tr>
+<div id="next"></div>
+</thead>
+<tbody>
+<tr>
+<td class="col-sm-3">
+<select class="form-control" name="type[]" id="type" required>
+<option value="">Select the Type</option>
+<option value="">Select the Type</option>
+<option value="">Select the Type</option>
+<option value="">Select the Type</option>
+<!-- <?php -->
+
+$arr = array();
+$sql = mysqli_query($con,"select id,name from type_table where view = 'display'");
+while($result = mysqli_fetch_assoc($sql)){
+    echo '<option value="'.$result['id'].'">'.$result['name'].'</option>';
+    $arr[$result['id']] = $result['name'];  
+}
+
+
+</select>   
+</td>
+
+<td class="col-sm-2"><a class="deleteRow"></a> </td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="5" style="text-align: left;">
+<input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
+</td>
+</tr>
+<tr>
+</tr>
+</tfoot>
+</table>        
+<div class="form-group">
+<div class="col-md-12">
+<input type="submit" value="SUBMIT" name="submit" class="btn btn-success center-block" id="submittable">
+</div>
+</div>                       
+</form>                                       
+
+<script>
+$(document).ready(function(){
+// var arr = <?php echo json_encode($arr);?>;
+//console.log(arr);
+document.getElementById("addrow").onclick = function () {
+
+  $.ajax({
+  url:"test_select.php",
+  method:"post",
+  data:{arr:arr},
+  success:function(data){
+       $('#next').html(data);
+  } 
+  });
+}
+
+$("table.order-list").on("click", ".ibtnDel", function (event) {
+$(this).closest("tr").remove();       
+counter -= 1
+});
+
+});
